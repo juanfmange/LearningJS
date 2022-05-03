@@ -145,3 +145,61 @@ var resultado = estudiantes.map((estudiante) => estudiante.matriculado).reduce((
 
 console.log(estudiantes);
 console.log(resultado);
+
+
+// some -- retorna un valor booleano, si ALGUNO de los elementos coincide retornara true por ejemplo
+
+var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var resultado = numeros.some((numero) => numero % 2 == 0);
+console.log(resultado);
+
+
+// Every -- retorna un valor logico si  TODOS los elementos del array cumplen con alguna condicion
+var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var resultado = numeros.every((numero) => numero % 2 === 0);
+console.log(resultado);
+
+// Find -- Es inmutable, va retornar el primer elemento que coinicida con la busqueda, unicamente el primer elemento, solo puede retornar un valor
+var clientes = [
+  { id: 1, nombre: "a" },
+  { id: 2, nombre: "b" },
+  { id: 3, nombre: "c" },
+  { id: 4, nombre: "d" },
+  { id: 5, nombre: "f" }
+];
+var cliente = clientes.find((cliente) => cliente.id === 1);
+console.log(cliente);
+console.log(clientes);
+
+// Find index: Me devuelve la POSICOMN del array
+var clientes = [
+  { id: 1, nombre: "a" },
+  { id: 2, nombre: "b" },
+  { id: 3, nombre: "c" },
+  { id: 4, nombre: "d" },
+  { id: 5, nombre: "f" },
+];
+
+var posicion = clientes.findIndex((cliente) => cliente.id === 2);
+console.log(posicion);
+
+// Includes
+
+var mascotas = ['perro', 'gatito', 'conejo'];
+var resultado = mascotas.includes('gatito')
+console.log(resultado);
+console.log('juan'.includes('a'));
+
+var buscador = (parametro) => {
+    let clientes = [
+      { id: 1, nombre: "a" },
+      { id: 2, nombre: "b" },
+      { id: 3, nombre: "c" },
+      { id: 4, nombre: "d" },
+      { id: 5, nombre: "f" },
+    ];
+
+    return clientes.filter((cliente) => cliente.nombre.includes(parametro))
+}
+
+console.log(buscador('a'));
