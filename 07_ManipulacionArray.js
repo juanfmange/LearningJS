@@ -203,3 +203,38 @@ var buscador = (parametro) => {
 }
 
 console.log(buscador('a'));
+
+// join - Unir todos los metodos de un arreglo y generar un string
+
+var elementos = ['aire', 'agua', 'fuego', 'tierra'];
+var resultado = elementos.join('.');
+console.log(resultado);
+
+
+var clientes = [
+  { id: 1, nombre: "a" },
+  { id: 2, nombre: "b" },
+  { id: 3, nombre: "c" },
+  { id: 4, nombre: "d" },
+  { id: 5, nombre: "f" },
+];
+
+//console.log(clientes.join());
+
+var csvGenerator = (array, separador = ',') => {
+    let headers = Object.keys(array[0]).join(separador); // shift devuelve el primer elemento pero lo modifica
+    let data = array.map((element) => Object.values(element).join(separador))  //Object.values --- Obtiene los valores de un objeto
+    console.log(headers);
+    data.forEach(element => console.log(element))
+}
+
+csvGenerator(clientes);
+
+
+
+
+
+
+
+console.log(Object.values({ id: 2, nombre: 'juan' }));
+console.log(Object.keys({id: 2, nombre: 'juan'})); //keys -- retorna las claves de objeto
