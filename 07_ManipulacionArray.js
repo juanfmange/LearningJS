@@ -237,4 +237,40 @@ csvGenerator(clientes);
 
 
 console.log(Object.values({ id: 2, nombre: 'juan' }));
-console.log(Object.keys({id: 2, nombre: 'juan'})); //keys -- retorna las claves de objeto
+console.log(Object.keys({ id: 2, nombre: 'juan' })); //keys -- retorna las claves de objeto
+
+// Concat -- sort -- splice -- slice
+
+// Concat
+var array1 = [1, 2, 3, 4, 5];
+var array2 = [6, 7, 8, 9, 0];
+var array3 = array1.concat(array2);
+var array4 = [...array1, ...array2];
+console.log(array1);
+console.log(array2);
+console.log(array3);
+console.log(array4);
+
+// Sort
+var array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+console.log(array1.sort());
+
+var meses = ['Dic', 'Ene', 'Mar', 'Feb']
+console.log(meses.sort());
+
+
+// Ordenar de forma ascendente y descendente
+var array = [1, 10000, 21, 30, 4];
+var ordenado = array.sort((a, b) =>  a - b );
+console.log(ordenado);
+
+//Splice
+var nombres = ['Juan', 'Francisco', 'Mange'];
+nombres.splice(1, 1, 'paco') // el primer parametro es desde donde empieza a eliminar, el segundo el numero de elementos a eliminar, el tercero sustituye el parametro especificado
+console.log(nombres);
+
+//Slice (retorna una copia mas quepeña del array)
+
+var nombres = ["Juan", "Francisco", "Mange"];
+var resultado = nombres.slice(1, 2); //no incluye la ultima posicion
+console.log(resultado);
