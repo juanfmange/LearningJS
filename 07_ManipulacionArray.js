@@ -109,3 +109,31 @@ var resultado = edades.reduce((acomuladore,edade)=>{
 },{})
 console.log(edades);
 console.log(resultado);
+
+var ventas = [
+    { nombre: 'camiseta', precio: 12, totalVendido: 10 },
+    {nombre: 'pantalon', precio: 18, totalVendido: 20 },
+    {nombre: 'tenis', precio: 20, totalVendido: 40}
+]
+
+var resultado = ventas.reduce((acomulador, item) => {
+    let totalVentas = item.precio * item.totalVendido;
+    acomulador[item.nombre] = totalVentas;
+    return acomulador;
+
+}, {})
+
+console.log(ventas);
+console.log(resultado);
+
+
+var estudiantes = [
+    { nombre: 'juan', edad: 20, matriculado: true },
+    { nombre: 'alan', edad: 19, matriculado: true },
+    { nombre: 'paco', edad: 23, matriculado: false },
+    { nombre: 'luis', edad: 25, matriculado: true },
+    { nombre: 'pedro', edad: 29, matriculado: false },
+
+];
+
+var resultado = estudiantes.map((es)=>)
