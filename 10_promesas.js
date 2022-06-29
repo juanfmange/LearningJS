@@ -58,3 +58,48 @@ const suma = new Promise((res, rej) => {                 //nueva promesa. No pod
 //return new Promise((resolve, reject) => {
 
 //})
+
+
+// Async - Await: Para que funcione Await debe de existir Async
+
+
+
+const getData3 = (error) => new Promise((resolve, reject) => { //Funcion que retorna una promesa. Podemos pasarle parametro
+    if (!error) {
+        setTimeout(() => {
+            resolve({
+                nombre: 'juan',
+                apellido: 'mange'
+            })
+        }, 3000);
+    } else {
+        reject('No hay datos por ahora')
+    }
+})
+
+const getData4 = (error) => new Promise((resolve, reject) => { //Funcion que retorna una promesa. Podemos pasarle parametro
+    if (!error) {
+        setTimeout(() => {
+            resolve({
+                nombre: 'paco',
+                apellido: 'saga'
+            })
+        }, 2000);
+    } else {
+        reject('No hay datos por ahora')
+    }
+})
+
+const main = async () => {
+    try {
+        let resultado = await getData3(false);
+        let resultado2 = await getData4(false);
+        console.log(resultado);
+        console.log(resultado2);
+    } catch (error){
+        console.log(error);
+    }
+   
+}
+
+main();
