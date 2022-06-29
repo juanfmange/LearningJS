@@ -1,0 +1,28 @@
+{
+  "name": "learningjs",
+  "version": "1.0.0",
+  "description": "practica cliente servidor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanfmange/LearningJS.git"
+  },
+  "keywords": [
+    "practica",
+    "modelo",
+    "cliente",
+    "servidor"
+  ],
+  "author": "juanfmange",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juanfmange/LearningJS/issues"
+  },
+  "homepage": "https://github.com/juanfmange/LearningJS#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
