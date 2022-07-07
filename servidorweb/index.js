@@ -1,11 +1,14 @@
 const express = require('express');
+const data = require('./MOCK_DATA.json');
+
 
 const app = express();
 const PORT = 3000;
 
 app.get('/', (req,res) => {
     res.json({
-        mensaje: 'hola mundo desde express'
+        message: 'Lista de usuarios',
+        body: data
     })
 })
 
