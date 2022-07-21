@@ -1,5 +1,5 @@
 const express = require('express');
-const debug = require('debug')('app:main');
+//const debug = require('debug')('app:main');
 
 const { Config } = require('./src/config/index')
 
@@ -11,5 +11,8 @@ app.use(express.json);
 
 
 app.listen(Config.port, () => {
-    debug(`servidor escuchando en el puerto ${Config.port}`);
+    //debug(`servidor escuchando en el puerto ${Config.port}`);
+    console.log(`Servidor escuchando en el puerto ${Config.port}`)
 });
+
+
