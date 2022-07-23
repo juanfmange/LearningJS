@@ -7,10 +7,11 @@ module.exports = {
         let user = data.filter((person)=>person.id === identificador)[0];
         return user;
     },
-    updateUser: (id) => {
+    updateUser: (id,userMod) => {
         let identificador = Number(id);
-        let user = data.filter((person)=>person.id === identificador)[0];
-        return user;
+        let index = data.filterIndex((person) => person.id === identificador);
+        data.splice(index, 1, userMod);
+        return data;
     },
     deleateUser: (id) => {
         let identificador = Number(id);
