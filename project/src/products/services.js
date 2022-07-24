@@ -15,8 +15,8 @@ const getById = async (id) => {
 
 const create = async (product) => {
     const collection = await Database(COLLECTION);
-    let result = collection.insetOne(product);
-    return result.insertedId
+    let result = await collection.insetOne(product);
+    return result.insertedId;
 }
 
 module.exports.ProductsService = {
