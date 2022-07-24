@@ -4,10 +4,10 @@ const { ProductsService } = require('./services');
 const { Response } = require('../common/response')
 
 module.exports.ProductsController = {
-    getProducts: async (req, res) => { 
+    getProducts: async (req, res) => {
         try {
             let products = await ProductsService.getAll()
-            Response.success(res,200,'Lista de productos',products)
+            Response.success(res, 200, 'Lista de productos', products)
         } catch (error) {
             console.log("error en get products");
             Response.error(res);
@@ -18,7 +18,7 @@ module.exports.ProductsController = {
             const { params: { id } } = req;
             let product = await ProductsService.getById(id);
             if (!product) {
-                Response.error(res,new createError.NotFound())
+                Response.error(res, new createError.NotFound())
             } else {
                 Response.success(res, 200, `producto ${id}`, product);
 
@@ -42,4 +42,16 @@ module.exports.ProductsController = {
             Response.error(res)
         }
     },
-}
+    generateReport: (req, res) => {
+        try {
+            ProductsService.generateReport('Inventario',res)
+        } catch (error) {
+            console.log('error al generar el excel');
+            Response.error(res);
+            
+        }
+    },
+    //update
+    //delete
+
+};
